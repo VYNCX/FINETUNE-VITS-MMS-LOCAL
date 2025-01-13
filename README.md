@@ -105,7 +105,7 @@ accelerate launch run_vits_finetuning.py ./training_config_examples/finetune_mms
 from transformers import pipeline
 import scipy
 
-model_id = "ylacombe/vits_ljs_welsh_female_monospeaker_2" #your trained model path
+model_id = "modelpath or huggingface model" #your trained model path
 synthesiser = pipeline("text-to-speech", model_id) # add device=0 if you want to use a GPU
 
 speech = synthesiser("สวัสดีครับ นี่คือเสียงพูดภาษาไทย") #your text here
