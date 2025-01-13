@@ -1,0 +1,15 @@
+data:
+  root_path: "F:/RVC/finetune-hf-vits/dataset/BANK_TH"
+  metadata_path: "F:/RVC/finetune-hf-vits/dataset/BANK_TH/metadata.csv"
+model:
+  hidden_channels: 192
+  duration_hidden_channels: 192
+  duration_kernel_size: 3
+  dropout_rate: 0.1
+training:
+  batch_size: 16
+  num_workers: 4
+  learning_rate: 0.0002
+  epochs: 1000
+  save_interval: 50
+  log_interval: 10
