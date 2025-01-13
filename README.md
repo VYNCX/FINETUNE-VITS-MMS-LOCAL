@@ -29,8 +29,27 @@ All language support : [Check MMS Language Support](https://dl.fbaipublicfiles.c
 cd finetune-local-vits
 python convert_original_discriminator_checkpoint.py --language_code tha --pytorch_dump_folder_path <local-folder> #example ./models_dump
 ```
-## 3. Prepare Config file
+## 3. Prepare Dataset and Config file
 
+to prepare dataset in dataset folder or your path.its support for 
+    3-10 Sec per audio clip, Naturalness recordings.
+    16000-22050 Sample-rate for audio (MMS pretrained model used 16kHz)
+
+**Example** 
+```text
+/dataset
+ - metadata.csv
+ - /audio-data
+    - /train
+        - /audio1.wav
+```
+Metadata.csv
+
+```text
+file_name,text
+audio-data/train/audio1.wav,สวัสดีครับทุกคน ยินดีที่ได้พบกันอีกครั้ง
+audio-data/train/audio2.wav,เธอเคยเห็นนกบินสูงบนฟ้าสีครามไหม
+```
 You can prepare config .json file in **training_config_examples** directory. Remember name of .json file and directory for finetuning method.
 **Example** :
 ```json
