@@ -1,6 +1,6 @@
 # Finetune VITS and MMS on Local
 
-This repo is original by : https://github.com/ylacombe/finetune-hf-vits
+Original Repo : https://github.com/ylacombe/finetune-hf-vits
 
 ## 1. Requirements
 
