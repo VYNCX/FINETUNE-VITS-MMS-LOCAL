@@ -31,6 +31,13 @@ python convert_original_discriminator_checkpoint.py --language_code tha --pytorc
 ```
 ## 3. Prepare Config file
 
+You can prepare config .json file in **training_config_examples** directory. Remember name of .json file and directory for finetuning method
+Example :
+```sh
+
+```
+
+
 ## 4. Finetuning
 
 There are two ways to run the finetuning scrip, both using command lines. Note that you only need one GPU to finetune VITS/MMS as the models are really lightweight (83M parameters).
