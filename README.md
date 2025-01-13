@@ -1,4 +1,4 @@
-# Finetune VITS and MMS on Local's tools
+# Finetune VITS and MMS on Local
 
 This repo is original by : https://github.com/ylacombe/finetune-hf-vits
 
@@ -28,4 +28,14 @@ All language support : [Check MMS Language Support](https://dl.fbaipublicfiles.c
 ```sh
 cd finetune-local-vits
 python convert_original_discriminator_checkpoint.py --language_code tha --pytorch_dump_folder_path <local-folder> #example ./models_dump
+```
+## 3. Prepare Config file
+
+## 4. Finetuning
+
+There are two ways to run the finetuning scrip, both using command lines. Note that you only need one GPU to finetune VITS/MMS as the models are really lightweight (83M parameters).
+**Need to prepare config file before finetuning.**
+
+```sh
+accelerate launch run_vits_finetuning.py ./training_config_examples/finetune_mms_thai.json
 ```
