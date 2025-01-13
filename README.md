@@ -33,7 +33,7 @@ python convert_original_discriminator_checkpoint.py --language_code tha --pytorc
 
 You can prepare config .json file in **training_config_examples** directory. Remember name of .json file and directory for finetuning method
 Example :
-```sh
+```json
 {
     "project_name": "your_project_name",
     "push_to_hub": false,
