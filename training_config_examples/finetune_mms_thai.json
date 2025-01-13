@@ -2,11 +2,11 @@
     "project_name": "your_project_name",
     "push_to_hub": false,
     "hub_model_id": "",
-    "report_to": ["tensorboard"], //remove if you don't want to virtualize train process
+    "report_to": ["tensorboard"],
     "overwrite_output_dir": true,
-    "output_dir": "your_output_directory", // your output directory "./output" for local
+    "output_dir": "your_output_directory",
 
-    "dataset_name": "./dataset", // your dataset directory "./mms-tts-datasets/train" for local
+    "dataset_name": "./dataset",
     "audio_column_name": "audio",
     "text_column_name": "text",
     "train_split_name": "train",
@@ -26,7 +26,7 @@
     "num_train_epochs": 200,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
-    "per_device_train_batch_size": 8, // <-- decrease this parameter if you have less VRAM
+    "per_device_train_batch_size": 8,
     "learning_rate": 2e-5,
     "adam_beta1": 0.8,
     "adam_beta2": 0.99,
@@ -35,8 +35,8 @@
 
     "do_eval": true,
     "eval_steps": 50,
-    "per_device_eval_batch_size": 8, // <-- decrease this parameter if you have less VRAM
-    "max_eval_samples": 20, // <-- increase this parameter if you have less sample audio
+    "per_device_eval_batch_size": 8,
+    "max_eval_samples": 20,
     "do_step_schedule_per_epoch": true,
 
     "weight_disc": 3,
