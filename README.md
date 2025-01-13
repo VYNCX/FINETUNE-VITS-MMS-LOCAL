@@ -34,7 +34,57 @@ python convert_original_discriminator_checkpoint.py --language_code tha --pytorc
 You can prepare config .json file in **training_config_examples** directory. Remember name of .json file and directory for finetuning method
 Example :
 ```sh
+{
+    "project_name": "your_project_name",
+    "push_to_hub": false,
+    "hub_model_id": "",
+    "report_to": ["tensorboard"], //remove if you don't want to virtualize train process
+    "overwrite_output_dir": true,
+    "output_dir": "your_output_directory", // your output directory "./output" for local
 
+    "dataset_name": "./dataset", // your dataset directory "./mms-tts-datasets/train" for local
+    "audio_column_name": "audio",
+    "text_column_name": "text",
+    "train_split_name": "train",
+    "eval_split_name": "train",
+
+    "full_generation_sample_text": "ในวันหยุดสุดสัปดาห์ การไปช็อปปิ้งที่ห้างสรรพสินค้าเป็นกิจกรรมที่ทำให้เราผ่อนคลายจากความเครียดในชีวิตประจำวัน",
+
+    "max_duration_in_seconds": 20,
+    "min_duration_in_seconds": 1.0,
+    "max_tokens_length": 500,
+
+    "model_name_or_path": "your_model_path_for_pretrained_model",
+
+    "preprocessing_num_workers": 4,
+
+    "do_train": true,
+    "num_train_epochs": 200,
+    "gradient_accumulation_steps": 1,
+    "gradient_checkpointing": false,
+    "per_device_train_batch_size": 8, // <-- decrease this parameter if you have less VRAM
+    "learning_rate": 2e-5,
+    "adam_beta1": 0.8,
+    "adam_beta2": 0.99,
+    "warmup_ratio": 0.01,
+    "group_by_length": false,
+
+    "do_eval": true,
+    "eval_steps": 50,
+    "per_device_eval_batch_size": 8, // <-- decrease this parameter if you have less VRAM
+    "max_eval_samples": 20, // <-- increase this parameter if you have less sample audio
+    "do_step_schedule_per_epoch": true,
+
+    "weight_disc": 3,
+    "weight_fmaps": 1,
+    "weight_gen": 1,
+    "weight_kl": 1.5,
+    "weight_duration": 1,
+    "weight_mel": 35,
+
+    "fp16": true,
+    "seed": 456
+}
 ```
 
 
