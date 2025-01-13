@@ -96,3 +96,25 @@ There are two ways to run the finetuning scrip, both using command lines. Note t
 ```sh
 accelerate launch run_vits_finetuning.py ./training_config_examples/finetune_mms_thai.json
 ```
+
+## 5. inference
+
+**Run** :
+
+```python
+from transformers import pipeline
+import scipy
+
+model_id = "ylacombe/vits_ljs_welsh_female_monospeaker_2" #your trained model path
+synthesiser = pipeline("text-to-speech", model_id) # add device=0 if you want to use a GPU
+
+speech = synthesiser("สวัสดีครับ นี่คือเสียงพูดภาษาไทย") #your text here
+
+scipy.io.wavfile.write("finetuned_output.wav", rate=speech["sampling_rate"], data=speech["audio"][0])
+```
+
+or use with Sample Gradio : 
+
+```sh
+python inference-gradio.py
+```
